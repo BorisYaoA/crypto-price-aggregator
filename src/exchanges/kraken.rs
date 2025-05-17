@@ -17,7 +17,6 @@ struct KrakenTicker {
 pub async fn fetch_kraken(symbol: &str) -> Result<PriceResult> {
     let client = Client::new();
 
-    // Kraken uses different pair names than standard format, e.g., "BTC/USD" => "XBTUSD"
     let kraken_symbol = match symbol {
         "BTC/USD" => "XXBTZUSD",
         "ETH/USD" => "XETHZUSD",

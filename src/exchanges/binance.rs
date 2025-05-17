@@ -12,7 +12,6 @@ struct BinanceResponse {
 pub async fn fetch_binance(symbol: &str) -> Result<PriceResult> {
     let client = Client::new();
 
-    // Binance expects symbols like "BTCUSDT", "ETHUSDT"
     let binance_symbol = match symbol {
         "BTC/USD" => "BTCUSDT",
         "ETH/USD" => "ETHUSDT",
