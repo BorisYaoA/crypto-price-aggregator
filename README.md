@@ -14,4 +14,4 @@ Aggregates live BTC/USD and ETH/USD prices from multiple crypto exchanges using 
 
 ```bash
 cargo run -- --symbol BTC/USD        # CLI mode
-cargo run -- --rest                  # Start REST API on localhost:3000
+cargo run -- --rest                  # Start REST API on localhost:3000 and curl http://127.0.0.1:3000/prices
