@@ -29,6 +29,7 @@ pub async fn fetch_coinbase(symbol: &str) -> Result<PriceResult> {
 
     Ok(PriceResult {
         exchange: "Coinbase".to_string(),
+        symbol: "BTC/USD".to_string(),
         price: parsed_price,
     })
 }

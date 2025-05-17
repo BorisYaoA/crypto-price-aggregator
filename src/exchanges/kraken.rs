@@ -37,6 +37,7 @@ pub async fn fetch_kraken(symbol: &str) -> Result<PriceResult> {
 
     Ok(PriceResult {
         exchange: "Kraken".to_string(),
+        symbol: "BTC/USD".to_string(),
         price: parsed_price,
     })
 }

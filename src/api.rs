@@ -1,4 +1,5 @@
 use axum::{routing::get, Router};
+use hyper::Server;
 use std::net::SocketAddr;
 
 use crate::fetch::fetch_all_prices;
@@ -12,6 +13,6 @@ async fn get_prices() -> axum::Json<Vec<PriceResult>> {
 pub async fn start_server() -> anyhow::Result<()> {
     let app = Router::new().route("/prices", get(get_prices));
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    axum::Server::bind(&addr).serve(app.into_make_service()).await?;
+    Server::bind(&addr).serve(app.into_make_service()).await?;
     Ok(())
 }
