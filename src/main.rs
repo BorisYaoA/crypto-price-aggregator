@@ -1,5 +1,13 @@
 use clap::Parser;
-use crypto_price_aggregator::{fetch::fetch_all_prices, utils::print_prices};
+
+mod api;
+mod fetch;
+mod model;
+mod utils;
+mod exchanges;
+
+use fetch::fetch_all_prices;
+use utils::print_prices;
 
 #[derive(Parser)]
 struct Args {
@@ -14,7 +22,7 @@ async fn main() -> anyhow::Result<()> {
     let args = Args::parse();
 
     if args.rest {
-        crypto_price_aggregator::api::start_server().await?;
+        api::start_server().await?;
     } else {
         let prices = fetch_all_prices(&args.symbol).await?;
         print_prices(&prices);
