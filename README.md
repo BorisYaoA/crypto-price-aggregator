@@ -1,6 +1,6 @@
 # Crypto Price Aggregator
 
-Aggregates live BTC/USD and ETH/USD prices from multiple crypto exchanges using async Rust.
+Aggregates live BTC/USD prices from multiple crypto exchanges using async Rust.
 
 ## Features
 
