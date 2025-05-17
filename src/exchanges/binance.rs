@@ -26,7 +26,7 @@ pub async fn fetch_binance(symbol: &str) -> Result<PriceResult> {
 
     Ok(PriceResult {
         exchange: "Binance".to_string(),
-        symbol: "BTC/USD".to_string(),
+        symbol: symbol.to_string(),
         price: parsed_price,
     })
 }
