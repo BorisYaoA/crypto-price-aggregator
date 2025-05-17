@@ -14,4 +14,4 @@ Aggregates live BTC/USD prices from multiple crypto exchanges using async Rust.
 
 ```bash
 cargo run -- --symbol BTC/USD        # CLI mode
-cargo run -- --rest                  # Start REST API on localhost:8080
+cargo run -- --rest                  # Start REST API on localhost:3000
